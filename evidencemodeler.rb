@@ -9,7 +9,7 @@ class Evidencemodeler < Formula
   def install
     libexec.install Dir["*"]
     bin.install_symlink libexec/"evidence_modeler.pl"
-    cd "EvmUtil" do
+    cd "libexec/EvmUtil" do
         bin.install_symlink "partition_EVM_inputs.pl"
         bin.install_symlink "write_EVM_commands.pl"
         bin.install_symlink "execute_EVM_commands.pl"
