@@ -70,6 +70,9 @@ class Funannotate < Formula
     
       Be sure to install RepeatMasker Libraries if you have not done so already.
         Download from RepBase.
+        
+      Soft-link a repeatmasker utility script into the $PATH
+        ln -s #{HOMEBREW_PREFIX}/Cellar/repeatmasker/4.0.5/libexec/util/rmOutToGFF3.pl /usr/local/bin/rmOutToGFF3.pl
       
       Export required ENV variables:
         export EVM_HOME=#{HOMEBREW_PREFIX}/Cellar/evidencemodeler/1.1.1/libexec
