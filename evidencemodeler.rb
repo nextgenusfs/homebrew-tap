@@ -7,18 +7,18 @@ class Evidencemodeler < Formula
   # tag "bioinformatics"
   
   def install
-    libexec.install Dir["*"]
-    bin.install_symlink libexec/'evidence_modeler.pl'
-    cd libexec/'EvmUtil' do
-        bin.install_symlink 'partition_EVM_inputs.pl'
-        bin.install_symlink 'write_EVM_commands.pl'
+    prefix.install Dir["*"]
+    #bin.install_symlink libexec/'evidence_modeler.pl'
+    #cd libexec/'EvmUtil' do
+        #bin.install_symlink 'partition_EVM_inputs.pl'
+        #bin.install_symlink 'write_EVM_commands.pl'
         #bin.install_symlink ('EvmUtil'/'execute_EVM_commands.pl')
         #bin.install_symlink ('EvmUtil'/'recombine_EVM_partial_outputs.pl')
         #bin.install_symlink ('EvmUtil'/'convert_EVM_outputs_to_GFF3.pl')
         #bin.install_symlink ('EvmUtil'/'misc'/'augustus_GFF3_to_EVM_GFF3.pl')
         #bin.install_symlink ('EvmUtil'/'misc'/'exonerate_gff_to_alignment_gff3.pl')
         #bin.install_symlink ('EvmUtil'/'gff3_gene_prediction_file_validator.pl')
-    end
+    #end
   end
 
   def caveats; <<-EOS.undent
