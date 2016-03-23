@@ -8,6 +8,9 @@ class Braker < Formula
   def install
     libexec.install Dir["*"]
     bin.install_symlink libexec/"braker.pl"
+    bin.install_symlink libexec/"helpMod.pm"
+    bin.install_symlink libexec/"filterGeneMark.pl"
+    bin.install_symlink libexec/"filterIntronsFindStrand.pl"
   end
 
   test do
