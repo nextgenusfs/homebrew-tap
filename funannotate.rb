@@ -62,19 +62,29 @@ class Funannotate < Formula
 
   def caveats; <<-EOS.undent
     Additional components of Funannotate:
-      Troubleshooting, see detailed instructions at https://github.com/nextgenusfs/funannotate
-      GeneMark-ES/ET. Download from http://exon.gatech.edu/GeneMark/license_download.cgi
+      Troubleshooting, see detailed instructions:
+        https://github.com/nextgenusfs/funannotate
+      
+      Download/install GeneMark-ES/ET
+        http://exon.gatech.edu/GeneMark/license_download.cgi
        
       Install python modules via PIP:
         pip install -U biopython natsort psutil goatools numpy pandas matplotlib seaborn scikit-learn
     
       Be sure to install RepeatMasker Libraries if you have not done so already.
-        Download from RepBase.
+        #download RepeatMasker libraries and install
+        wget --user name --password pass             http://www.girinst.org/server/RepBase/protected/repeatmaskerlibraries/repeatmaskerlibraries-20150807.tar.gz
+        tar zxvf repeatmaskerlibraries-20150807.tar.gz -C /usr/local/Cellar/repeatmasker/4.0.5/libexec
+
+        #now setup RepeatMasker
+        cd #{HOMEBREW_PREFIX}/Cellarrepeatmasker/4.0.5/libexec
+        ./configure <config.txt
+
         
-      Soft-link a repeatmasker utility script into the $PATH
+      Soft-link a repeatmasker utility script into the PATH:
         ln -s #{HOMEBREW_PREFIX}/Cellar/repeatmasker/4.0.5/libexec/util/rmOutToGFF3.pl /usr/local/bin/rmOutToGFF3.pl
       
-      Export required ENV variables:
+      Export required ENV variables (your paths might differ slightly):
         export EVM_HOME=#{HOMEBREW_PREFIX}/Cellar/evidencemodeler/1.1.1/libexec
         export AUGUSTUS_CONFIG_PATH=#{HOMEBREW_PREFIX}/opt/augustus/libexec/config
         export BAMTOOLS_PATH=#{HOMEBREW_PREFIX}/Cellar/bamtools/2.4.0/bin
