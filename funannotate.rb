@@ -24,10 +24,10 @@ class Funannotate < Formula
   depends_on "trimal" => :recommended
   depends_on "mafft" => :recommended
   depends_on "cpanm" => :optional
+  depends_on 'braker' => :recommended
+  depends_on 'evidencemodeler' => :recommended
+  depends_on 'gag' => :recommended
   # No formula: depends_on 'genemark-es' => :recommended
-  # No formula: depends_on 'braker1' => :optional
-  # No formula: depends_on 'evidence_modeler' => :recommended
-  # No formula: depends_on 'GAG' => :recommended
   
   depends_on "Bio::Perl" => :perl
   depends_on "Getopt::Long" => :perl
@@ -44,6 +44,81 @@ class Funannotate < Formula
   depends_on "Parallel::ForkManager" => :perl
 
   depends_on :python if MacOS.version <= :snow_leopard
+
+  resource "Cycler" do
+    url "https://pypi.python.org/packages/source/C/Cycler/cycler-0.10.0.tar.gz"
+    sha256 "cd7b2d1018258d7247a71425e9f26463dfb444d411c39569972f4ce586b0c9d8"
+  end
+
+  resource "matplotlib" do
+    url "https://pypi.python.org/packages/source/m/matplotlib/matplotlib-1.5.1.tar.gz"
+    sha256 "3ab8d968eac602145642d0db63dd8d67c85e9a5444ce0e2ecb2a8fedc7224d40"
+  end
+
+  resource "numpy" do
+    url "https://pypi.python.org/packages/source/n/numpy/numpy-1.10.4.tar.gz"
+    sha256 "7356e98fbcc529e8d540666f5a919912752e569150e9a4f8d869c686f14c720b"
+  end
+
+  resource "pyparsing" do
+    url "https://pypi.python.org/packages/source/p/pyparsing/pyparsing-2.1.0.tar.gz"
+    sha256 "f6cb2bc85a491347c3c699db47f7ecc02903959156b4f92669ebf82395982901"
+  end
+
+  resource "python-dateutil" do
+    url "https://pypi.python.org/packages/source/p/python-dateutil/python-dateutil-2.5.0.tar.gz"
+    sha256 "c1f7a66b0021bd7b206cc60dd47ecc91b931cdc5258972dc56b25186fa9a96a5"
+  end
+
+  resource "pytz" do
+    url "https://pypi.python.org/packages/source/p/pytz/pytz-2015.7.tar.bz2"
+    sha256 "fbd26746772c24cb93c8b97cbdad5cb9e46c86bbdb1b9d8a743ee00e2fb1fc5d"
+  end
+
+  resource "six" do
+    url "https://pypi.python.org/packages/source/s/six/six-1.10.0.tar.gz"
+    sha256 "105f8d68616f8248e24bf0e9372ef04d3cc10104f1980f54d57b2ce73a5ad56a"
+  end
+  
+  resource "pandas" do
+    url "https://pypi.python.org/packages/source/p/pandas/pandas-0.17.1.tar.gz"
+    sha256 "cfd7214a7223703fe6999fbe34837749540efee1c985e6aee9933f30e3f72837"
+  end
+
+  resource "biopython" do
+    url "https://pypi.python.org/packages/source/b/biopython/biopython-1.66.tar.gz"
+    sha256 "171ad726f50528b514f9777e6ea54138f6e35792c5b128c4ab91ce918a48bbbd"
+  end
+
+  resource "psutil" do
+    url "https://pypi.python.org/packages/source/p/psutil/psutil-4.0.0.tar.gz"
+    sha256 "1a7c672f9ee79c84ff16b8de6f6040080f0e25002ac47f115f4a54aa88e5cfcd"
+  end
+
+  resource "fisher" do
+    url "https://pypi.python.org/packages/source/f/fisher/fisher-0.1.4.tar.gz"
+    sha256 "bba9e4ece8dda18f7e67fee487947a5ac28ed2bb138600da8b214ac051f87ebf"
+  end
+
+  resource "goatools" do
+    url "https://pypi.python.org/packages/source/g/goatools/goatools-0.5.9.tar.gz"
+    sha256 "bf7617ba0314d34f1b50ebb7b17071e3013a2fcaf8197fbfb4c62fe292075ee8"
+  end
+
+  resource "seaborn" do
+    url "https://pypi.python.org/packages/source/s/seaborn/seaborn-0.7.0.tar.gz"
+    sha256 "15a8b2747becfdb86cfa60b5fcfa9bb934e42ef0ced660e0d57e8aea741f7145"
+  end
+
+  resource "natsort" do
+    url "https://pypi.python.org/packages/source/n/natsort/natsort-4.0.4.tar.gz"
+    sha256 "c76ba3e85fba78f276ac06e4d47f2230d1070f9c19413b2a0bfe7de6af311839"
+  end
+
+  resource "scikit-learn" do
+    url "https://pypi.python.org/packages/source/s/scikit-learn/scikit-learn-0.17.1.tar.gz"
+    sha256 "9f4cf58e57d81783289fc503caaed1f210bab49b7a6f680bf3c04b1e0a96e5f0"
+  end
   #depends_on "biopython" => :python
   #depends_on "natsort" => :python  
   #depends_on "psutil" => :python  
@@ -55,18 +130,27 @@ class Funannotate < Formula
   #depends_on "scikit-learn" => :python
 
   def install
+    ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python2.7/site-packages"
+    %w[six Cycler pyparsing python-dateutil pytz numpy matplotlib pandas biopython psutil fisher goatools seaborn natsort scikit-learn].each do |r|
+      resource(r).stage do
+        system "python", *Language::Python.setup_install_args(libexec/"vendor")
+      end
+    end
+    ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python2.7/site-packages"
+    system "python", *Language::Python.setup_install_args(libexec)
+    
+    bin.install Dir[libexec/"bin/*"]
+    bin.env_script_all_files(libexec/"bin", :PYTHONPATH => ENV["PYTHONPATH"])
+    
     libexec.install Dir["*"]
     bin.install_symlink libexec/"funannotate"
   end
 
   def caveats; <<-EOS.undent
     Additional components of Funannotate:
-      see detailed instructions at https://github.com/nextgenusfs/funannotate
+      Troubleshooting, see detailed instructions at https://github.com/nextgenusfs/funannotate
       GeneMark-ES/ET. Download from http://exon.gatech.edu/GeneMark/license_download.cgi
-      BRAKER1 download from http://exon.gatech.edu/GeneMark/Braker/BRAKER1.tar.gz
-      EVidence Modeler from https://github.com/EVidenceModeler
-      Genome Annotation Generator from https://github.com/genomeannotation
-      
+       
       Install python modules via PIP:
         pip install -U biopython natsort psutil goatools numpy pandas matplotlib seaborn scikit-learn
     
@@ -83,3 +167,4 @@ class Funannotate < Formula
     system "#{bin}/funannotate version"
   end
 end
+
