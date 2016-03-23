@@ -27,6 +27,7 @@ class Funannotate < Formula
   depends_on 'braker' => :recommended
   depends_on 'evidencemodeler' => :recommended
   depends_on 'gag' => :recommended
+  depends_on 'matplotlib' => :recommended
   # No formula: depends_on 'genemark-es' => :recommended
   
   depends_on "Bio::Perl" => :perl
@@ -44,41 +45,6 @@ class Funannotate < Formula
   depends_on "Parallel::ForkManager" => :perl
 
   depends_on :python if MacOS.version <= :snow_leopard
-
-  resource "Cycler" do
-    url "https://pypi.python.org/packages/source/C/Cycler/cycler-0.10.0.tar.gz"
-    sha256 "cd7b2d1018258d7247a71425e9f26463dfb444d411c39569972f4ce586b0c9d8"
-  end
-
-  resource "matplotlib" do
-    url "https://pypi.python.org/packages/source/m/matplotlib/matplotlib-1.5.1.tar.gz"
-    sha256 "3ab8d968eac602145642d0db63dd8d67c85e9a5444ce0e2ecb2a8fedc7224d40"
-  end
-
-  resource "numpy" do
-    url "https://pypi.python.org/packages/source/n/numpy/numpy-1.10.4.tar.gz"
-    sha256 "7356e98fbcc529e8d540666f5a919912752e569150e9a4f8d869c686f14c720b"
-  end
-
-  resource "pyparsing" do
-    url "https://pypi.python.org/packages/source/p/pyparsing/pyparsing-2.1.0.tar.gz"
-    sha256 "f6cb2bc85a491347c3c699db47f7ecc02903959156b4f92669ebf82395982901"
-  end
-
-  resource "python-dateutil" do
-    url "https://pypi.python.org/packages/source/p/python-dateutil/python-dateutil-2.5.0.tar.gz"
-    sha256 "c1f7a66b0021bd7b206cc60dd47ecc91b931cdc5258972dc56b25186fa9a96a5"
-  end
-
-  resource "pytz" do
-    url "https://pypi.python.org/packages/source/p/pytz/pytz-2015.7.tar.bz2"
-    sha256 "fbd26746772c24cb93c8b97cbdad5cb9e46c86bbdb1b9d8a743ee00e2fb1fc5d"
-  end
-
-  resource "six" do
-    url "https://pypi.python.org/packages/source/s/six/six-1.10.0.tar.gz"
-    sha256 "105f8d68616f8248e24bf0e9372ef04d3cc10104f1980f54d57b2ce73a5ad56a"
-  end
   
   resource "pandas" do
     url "https://pypi.python.org/packages/source/p/pandas/pandas-0.17.1.tar.gz"
