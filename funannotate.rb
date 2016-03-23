@@ -42,7 +42,8 @@ class Funannotate < Formula
   depends_on "Hash::Merge" => :perl
   depends_on "Logger::Simple" => :perl
   depends_on "Parallel::ForkManager" => :perl
-
+  depends_on "Scalar::Util::Numeric" => :perl
+  
   depends_on :python if MacOS.version <= :snow_leopard
 
   #depends_on "biopython" => :python
@@ -65,7 +66,7 @@ class Funannotate < Formula
       Troubleshooting, see detailed instructions:
         https://github.com/nextgenusfs/funannotate
       
-      Download/install GeneMark-ES/ET
+      Download/install GeneMark-ES/ET: (gmes_petap.pl must be in PATH)
         http://exon.gatech.edu/GeneMark/license_download.cgi
        
       Install python modules via PIP:
@@ -73,13 +74,13 @@ class Funannotate < Formula
     
       Be sure to install RepeatMasker Libraries if you have not done so already.
         wget --user name --password pass http://www.girinst.org/server/RepBase/protected/repeatmaskerlibraries/repeatmaskerlibraries-20150807.tar.gz
-        tar zxvf repeatmaskerlibraries-20150807.tar.gz -C /usr/local/Cellar/repeatmasker/4.0.5/libexec
+        tar zxvf repeatmaskerlibraries-20150807.tar.gz -C #{HOMEBREW_PREFIX}/Cellar/repeatmasker/4.0.5/libexec
 
         cd #{HOMEBREW_PREFIX}/Cellar/repeatmasker/4.0.5/libexec
         ./configure <config.txt
         
       Soft-link a repeatmasker utility script into the PATH:
-        ln -s #{HOMEBREW_PREFIX}/Cellar/repeatmasker/4.0.5/libexec/util/rmOutToGFF3.pl /usr/local/bin/rmOutToGFF3.pl
+        ln -s #{HOMEBREW_PREFIX}/Cellar/repeatmasker/4.0.5/libexec/util/rmOutToGFF3.pl #{HOMEBREW_PREFIX}/bin/rmOutToGFF3.pl
       
       Export required ENV variables (your paths might differ slightly):
         export EVM_HOME=#{HOMEBREW_PREFIX}/Cellar/evidencemodeler/1.1.1/libexec
