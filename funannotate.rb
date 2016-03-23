@@ -97,7 +97,7 @@ class Funannotate < Formula
 
   def install
     ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python2.7/site-packages"
-    %w[six Cycler pyparsing python-dateutil pytz numpy matplotlib pandas biopython psutil fisher goatools seaborn natsort scikit-learn].each do |r|
+    %w[pandas biopython psutil fisher goatools seaborn natsort scikit-learn].each do |r|
       resource(r).stage do
         system "python", *Language::Python.setup_install_args(libexec/"vendor")
       end
