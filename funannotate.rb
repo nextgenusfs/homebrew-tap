@@ -72,10 +72,10 @@ class Funannotate < Formula
         pip install -U biopython natsort psutil goatools numpy pandas matplotlib seaborn scikit-learn
     
       Be sure to install RepeatMasker Libraries if you have not done so already.
-        wget --user name --password pass             http://www.girinst.org/server/RepBase/protected/repeatmaskerlibraries/repeatmaskerlibraries-20150807.tar.gz
+        wget --user name --password pass    http://www.girinst.org/server/RepBase/protected/repeatmaskerlibraries/repeatmaskerlibraries-20150807.tar.gz
         tar zxvf repeatmaskerlibraries-20150807.tar.gz -C /usr/local/Cellar/repeatmasker/4.0.5/libexec
 
-        cd #{HOMEBREW_PREFIX}/Cellarrepeatmasker/4.0.5/libexec
+        cd #{HOMEBREW_PREFIX}/Cellar/repeatmasker/4.0.5/libexec
         ./configure <config.txt
         
       Soft-link a repeatmasker utility script into the PATH:
