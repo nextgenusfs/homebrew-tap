@@ -3,7 +3,7 @@ class Funannotate < Formula
   homepage "https://github.com/nextgenusfs/funannotate"
   url "https://github.com/nextgenusfs/funannotate/archive/0.1.2.tar.gz"
   version "0.1.2"
-  sha256 ""
+  sha256 "7eddc0b5c0bd15807234956a76d4280b7890a23be2b10f4550c7892044400b61"
   # tag "bioinformatics"
 
   depends_on "gmap-gsnap" => :recommended
