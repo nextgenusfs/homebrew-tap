@@ -15,12 +15,12 @@ class Ufits < Formula
 
       Make executable:
          sudo chmod +x /path/usearch/binary
-  
+
       Add to $PATH (UFITS uses usearch8 as default name):
          sudo ln -s /path/usearch/binary /usr/local/bin/usearch8
 
       Python Dependencies:
-        pip install -U biopython natsort numpy pandas matplotlib  
+        pip install -U biopython natsort numpy pandas matplotlib
     EOS
   end
 
