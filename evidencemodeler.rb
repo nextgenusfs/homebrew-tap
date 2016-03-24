@@ -13,7 +13,7 @@ class Evidencemodeler < Formula
     Set ENV Variable for EVidence Modeler by adding to your ~/.bash_profile
 
       export EVM_HOME=#{prefix}
- 
+
     EOS
   end
 
