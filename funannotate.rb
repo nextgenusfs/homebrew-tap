@@ -15,7 +15,7 @@ class Funannotate < Formula
   depends_on "blast" => :recommended
   depends_on "hmmer" => :recommended
   depends_on "exonerate" => :recommended
-  depends_on "nextgenusfs/tap/repeatscout" if OS.linux?
+  depends_on "nextgenusfs/tap/repeatscout-linux" if OS.linux?
   depends_on "repeatmasker" => :recommended
   depends_on "repeatmodeler" => :recommended
   depends_on "trnascan" => :recommended
