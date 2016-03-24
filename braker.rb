@@ -14,6 +14,6 @@ class Braker < Formula
   end
 
   test do
-    system "#{bin}/braker.pl --version"  
+    system "#{bin}/braker.pl --version"
   end
 end
