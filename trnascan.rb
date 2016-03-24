@@ -2,7 +2,7 @@ class Trnascan < Formula
   homepage "http://eddylab.org/software.html"
   # doi '10.1093/nar/25.5.0955'
   url "http://eddylab.org/software/tRNAscan-SE/tRNAscan-SE.tar.Z"
-  sha256 ""
+  sha256 "843caf3e258a6293300513ddca7eb7dbbd2225e5baae1e5a7bcafd509f6dd550"
   version "1.23"
 
   def install
