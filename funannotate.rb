@@ -2,7 +2,6 @@ class Funannotate < Formula
   desc "Scripts to functionally annotate fungal genomes"
   homepage "https://github.com/nextgenusfs/funannotate"
   url "https://github.com/nextgenusfs/funannotate/archive/0.1.2.tar.gz"
-  version "0.1.2"
   sha256 "7eddc0b5c0bd15807234956a76d4280b7890a23be2b10f4550c7892044400b61"
   # tag "bioinformatics"
 
@@ -48,12 +47,12 @@ class Funannotate < Formula
   depends_on :python if MacOS.version <= :snow_leopard
 
   # No formula: depends_on "biopython" => :python
-  # No formula: depends_on "natsort" => :python  
-  # No formula: depends_on "psutil" => :python  
+  # No formula: depends_on "natsort" => :python
+  # No formula: depends_on "psutil" => :python
   # No formula: depends_on "goatools" => :python
   # No formula: depends_on "numpy" => :python
   # No formula: depends_on "pandas" => :python
-  # No formula: depends_on "matplotlib" => :python  
+  # No formula: depends_on "matplotlib" => :python
   # No formula: depends_on "seaborn" => :python
   # No formula: depends_on "scikit-learn" => :python
 
@@ -88,7 +87,7 @@ class Funannotate < Formula
         export AUGUSTUS_CONFIG_PATH=#{HOMEBREW_PREFIX}/opt/augustus/libexec/config
         export BAMTOOLS_PATH=#{HOMEBREW_PREFIX}/Cellar/bamtools/2.4.0/bin
         export GENEMARK_PATH=/path/to/gmes_petap.pl
-  
+
       Install Databases for funannotate:
         cd #{libexec}
         ./setup.sh
