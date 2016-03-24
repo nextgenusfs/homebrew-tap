@@ -1,4 +1,4 @@
-class Repeatscoutlinux < Formula
+class Repeatscout < Formula
   homepage "http://bix.ucsd.edu/repeatscout/"
   # doi "10.1093/bioinformatics/bti1018"
   # tag "bioinformatics"
