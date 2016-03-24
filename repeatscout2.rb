@@ -10,7 +10,7 @@ class Repeatscout2 < Formula
 
   def install
     system "make"
-    prefix.rmdir
+    rm_r prefix
     system *%W[make install INSTDIR=#{prefix}]
     bin.install_symlink "../RepeatScout"
   end
