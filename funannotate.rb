@@ -83,7 +83,7 @@ class Funannotate < Formula
         ln -s #{HOMEBREW_PREFIX}/Cellar/repeatmasker/4.0.5/libexec/util/rmOutToGFF3.pl #{HOMEBREW_PREFIX}/bin/rmOutToGFF3.pl
       
       Export required ENV variables (your paths might differ slightly):
-        export EVM_HOME=#{HOMEBREW_PREFIX}/Cellar/evidencemodeler/1.1.1/libexec
+        export EVM_HOME=#{HOMEBREW_PREFIX}/Cellar/evidencemodeler/1.1.2
         export AUGUSTUS_CONFIG_PATH=#{HOMEBREW_PREFIX}/opt/augustus/libexec/config
         export BAMTOOLS_PATH=#{HOMEBREW_PREFIX}/Cellar/bamtools/2.4.0/bin
         export GENEMARK_PATH=/path/to/gmes_petap.pl
