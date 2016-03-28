@@ -61,6 +61,11 @@ class Funannotate < Formula
     bin.install_symlink libexec/"funannotate"
   end
 
+  def post_install
+    cd cd #{libexec}
+    system "./setup.sh"
+  end
+
   def caveats; <<-EOS.undent
     Additional components of Funannotate:
       Troubleshooting, see detailed instructions:
@@ -94,6 +99,8 @@ class Funannotate < Formula
 
     EOS
   end
+
+
 
   test do
     system "#{bin}/funannotate version"
