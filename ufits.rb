@@ -1,8 +1,11 @@
 class Ufits < Formula
   desc "USEARCH Fungal ITS Clustering scripts"
   homepage "https://github.com/nextgenusfs/ufits"
-  url "https://github.com/nextgenusfs/ufits/archive/0.3.2.tar.gz"
-  sha256 "0e4ee60dae210516855d15ac29538ed1fe15bde16ad3dec7a9a7aa7b9b777cad"
+  url "https://github.com/nextgenusfs/ufits/archive/0.3.3.tar.gz"
+  sha256 ""
+
+  depends_on "bedtools" => :recommended
+  depends_on "vsearch" => :optional
 
   def install
     libexec.install Dir["*"]
