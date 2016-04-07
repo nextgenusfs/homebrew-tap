@@ -1,8 +1,8 @@
 class Funannotate < Formula
   desc "Scripts to functionally annotate fungal genomes"
   homepage "https://github.com/nextgenusfs/funannotate"
-  url "https://github.com/nextgenusfs/funannotate/archive/0.1.4.tar.gz"
-  sha256 "220ccc9a2318e80e2bc2c718d7eeeaa7601cc434d845f14dcebf64311ad2cf6d"
+  url "https://github.com/nextgenusfs/funannotate/archive/0.1.5.tar.gz"
+  sha256 ""
   # tag "bioinformatics"
 
   depends_on "gmap-gsnap" => :recommended
@@ -24,9 +24,10 @@ class Funannotate < Formula
   depends_on "trimal" => :recommended
   depends_on "mafft" => :recommended
   depends_on "cpanminus" => :optional
-  depends_on 'braker' => :recommended
-  depends_on 'evidencemodeler' => :recommended
-  depends_on 'gag' => :recommended
+  depends_on "braker" => :recommended
+  depends_on "evidencemodeler" => :recommended
+  depends_on "gag" => :recommended
+  depends_on "proteinortho" => :recommended
   # No formula: depends_on 'genemark-es' => :recommended
 
   depends_on "Bio::Perl" => :perl
@@ -94,8 +95,6 @@ class Funannotate < Formula
 
     EOS
   end
-
-
 
   test do
     system "#{bin}/funannotate version"
