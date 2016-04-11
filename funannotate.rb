@@ -1,8 +1,8 @@
 class Funannotate < Formula
   desc "Scripts to functionally annotate fungal genomes"
   homepage "https://github.com/nextgenusfs/funannotate"
-  url "https://github.com/nextgenusfs/funannotate/archive/0.1.5.tar.gz"
-  sha256 "f631523fc5f54022d8a54f9fa780abadd2085f07b9cbb2e802281876138b9c74"
+  url "https://github.com/nextgenusfs/funannotate/archive/0.1.6.tar.gz"
+  sha256 ""
   # tag "bioinformatics"
 
   depends_on "gmap-gsnap" => :recommended
@@ -44,6 +44,8 @@ class Funannotate < Formula
   depends_on "Logger::Simple" => :perl
   depends_on "Parallel::ForkManager" => :perl
   depends_on "Scalar::Util::Numeric" => :perl
+  depends_on "DBI" => :perl
+  depends_on "Text::Soundex" => :perl
 
   depends_on :python if MacOS.version <= :snow_leopard
 
