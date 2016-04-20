@@ -1,8 +1,8 @@
 class Funannotate < Formula
   desc "Scripts to functionally annotate fungal genomes"
   homepage "https://github.com/nextgenusfs/funannotate"
-  url "https://github.com/nextgenusfs/funannotate/archive/0.1.6.tar.gz"
-  sha256 "c235a562e297ea9eb64ba9535d5962014b819241ebe8379beb9c3aba9e4b7f0a"
+  url "https://github.com/nextgenusfs/funannotate/archive/0.1.7.tar.gz"
+  sha256 ""
   # tag "bioinformatics"
 
   depends_on "gmap-gsnap" => :recommended
@@ -77,18 +77,18 @@ class Funannotate < Formula
 
       Be sure to install RepeatMasker Libraries if you have not done so already.
         wget --user name --password pass http://www.girinst.org/server/RepBase/protected/repeatmaskerlibraries/repeatmaskerlibraries-20150807.tar.gz
-        tar zxvf repeatmaskerlibraries-20150807.tar.gz -C #{HOMEBREW_PREFIX}/Cellar/repeatmasker/4.0.5/libexec
+        tar zxvf repeatmaskerlibraries-20150807.tar.gz -C #{HOMEBREW_PREFIX}/opt/repeatmasker/libexec
 
-        cd #{HOMEBREW_PREFIX}/Cellar/repeatmasker/4.0.5/libexec
+        cd #{HOMEBREW_PREFIX}/opt/repeatmasker/libexec
         ./configure <config.txt
 
       Soft-link a repeatmasker utility script into the PATH:
-        ln -s #{HOMEBREW_PREFIX}/Cellar/repeatmasker/4.0.5/libexec/util/rmOutToGFF3.pl #{HOMEBREW_PREFIX}/bin/rmOutToGFF3.pl
+        ln -s #{HOMEBREW_PREFIX}/opt/repeatmasker/libexec/util/rmOutToGFF3.pl #{HOMEBREW_PREFIX}/bin/rmOutToGFF3.pl
 
       Export required ENV variables (your paths might differ slightly):
-        export EVM_HOME=#{HOMEBREW_PREFIX}/Cellar/evidencemodeler/1.1.2
+        export EVM_HOME=#{HOMEBREW_PREFIX}/opt/evidencemodeler
         export AUGUSTUS_CONFIG_PATH=#{HOMEBREW_PREFIX}/opt/augustus/libexec/config
-        export BAMTOOLS_PATH=#{HOMEBREW_PREFIX}/Cellar/bamtools/2.4.0/bin
+        export BAMTOOLS_PATH=#{HOMEBREW_PREFIX}/opt/bamtools/bin
         export GENEMARK_PATH=/path/to/gmes_petap.pl
 
       Install Databases for funannotate:
