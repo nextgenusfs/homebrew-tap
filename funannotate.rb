@@ -5,13 +5,14 @@ class Funannotate < Formula
   sha256 "310996fa1761ede82c1ddf079ded9c3e01ee804e026721d7ec642f16e8e1ac43"
   # tag "bioinformatics"
 
+  depends_on "blast" => :recommended if OS.mac?
+  depends_on "blast" => [:build, '--without-check'] if OS.linux?
   depends_on "gmap-gsnap" => :recommended
   depends_on "blat" => :recommended
   depends_on "kent-tools" => :recommended
   depends_on "mummer" => :recommended
   depends_on "bamtools" => :recommended
   depends_on "augustus" => :recommended
-  depends_on "blast" => :recommended
   depends_on "hmmer" => :recommended
   depends_on "exonerate" => :recommended
   depends_on "repeatscout" => :recommended
