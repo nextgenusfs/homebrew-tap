@@ -12,7 +12,7 @@ class Funannotate < Formula
   depends_on "kent-tools" => :recommended
   depends_on "mummer" => :recommended
   depends_on "bamtools" => :recommended
-  depends_on "augustus" => :recommended
+  depends_on "augustus-3.2.2" => :recommended
   depends_on "hmmer" => :recommended
   depends_on "exonerate" => :recommended
   depends_on "repeatscout" => :recommended
