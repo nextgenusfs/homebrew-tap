@@ -5,7 +5,7 @@ class Phyloma < Formula
   sha256 "0307c24654c26832a8d7113b6ba22b1137cb88f9bc9b724ad67313174a71eaa9"
 
   depends_on "bedtools" => :recommended
-  depends_on "freebayes" => :recommended
+  depends_on "homebrew/science/freebayes" => :recommended
   depends_on "samtools" => :recommended
   depends_on "bcftools" => :recommended
   depends_on "bgzip" => :recommended
