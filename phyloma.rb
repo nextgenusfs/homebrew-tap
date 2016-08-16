@@ -8,7 +8,7 @@ class Phyloma < Formula
   depends_on "homebrew/science/freebayes" => :recommended
   depends_on "samtools" => :recommended
   depends_on "bcftools" => :recommended
-  depends_on "bgzip" => :recommended
+  depends_on "htslib" => :recommended
   depends_on "bwa" => :recommended
   depends_on "raxml" => :recommended
   depends_on "trimal" => :recommended
