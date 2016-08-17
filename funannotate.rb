@@ -1,8 +1,8 @@
 class Funannotate < Formula
   desc "Scripts to functionally annotate fungal genomes"
   homepage "https://github.com/nextgenusfs/funannotate"
-  url "https://github.com/nextgenusfs/funannotate/archive/0.3.6.tar.gz"
-  sha256 "76205cc9fe95713e955f9943c079c5c46be31ec4865775878a9c397254ae6552"
+  url "https://github.com/nextgenusfs/funannotate/archive/0.3.7.tar.gz"
+  sha256 "279d2a7137bc1a1505e90b359a9683920246d412cbd89a6a5a7ea09636e7340b"
   # tag "bioinformatics"
 
   depends_on "blast" => :recommended if OS.mac?
@@ -91,10 +91,6 @@ class Funannotate < Formula
         export AUGUSTUS_CONFIG_PATH=#{HOMEBREW_PREFIX}/opt/augustus/libexec/config
         export BAMTOOLS_PATH=#{HOMEBREW_PREFIX}/opt/bamtools/bin
         export GENEMARK_PATH=/path/to/gmes_petap.pl
-
-      Install Databases for funannotate:
-        cd #{HOMEBREW_PREFIX}/opt/funannotate/libexec
-        ./setup.sh
 
     EOS
   end
