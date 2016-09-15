@@ -1,8 +1,8 @@
 class Ufits < Formula
   desc "USEARCH Fungal ITS Clustering scripts"
   homepage "https://github.com/nextgenusfs/ufits"
-  url "https://github.com/nextgenusfs/ufits/archive/0.4.5.tar.gz"
-  sha256 "c56ee964ff761654613e3668f3dbddf62ac7f29d17ee4dc931c48048747a9c5a"
+  url "https://github.com/nextgenusfs/ufits/archive/0.4.6.tar.gz"
+  sha256 "7e14c5054e67791c4d0d4109fb69605ca1676487f2521dfad509bc95c5da0790"
 
   depends_on "bedtools" => :recommended
   depends_on "vsearch" => :recommended
