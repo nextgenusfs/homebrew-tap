@@ -1,8 +1,8 @@
 class Ufits < Formula
   desc "USEARCH Fungal ITS Clustering scripts"
   homepage "https://github.com/nextgenusfs/ufits"
-  url "https://github.com/nextgenusfs/ufits/archive/0.4.8.tar.gz"
-  sha256 "e316d004cc0b00b8321a3e307ddba5b6fae27f0cedf04f847b06b1ce6e0bb93c"
+  url "https://github.com/nextgenusfs/ufits/archive/0.4.9.tar.gz"
+  sha256 "11925a8ae541f035301c19c3200a999864054afbeb8beb890210978aeabbc09b"
 
   depends_on "bedtools" => :recommended
   depends_on "vsearch" => :recommended
@@ -23,7 +23,7 @@ class Ufits < Formula
          sudo ln -s /path/usearch/binary #{HOMEBREW_PREFIX}/opt/usearch8
 
       Python Dependencies:
-        pip install -U biopython natsort numpy pandas matplotlib
+        pip install -U biopython natsort numpy pandas matplotlib psutil h5py biom-format 
     EOS
   end
 
