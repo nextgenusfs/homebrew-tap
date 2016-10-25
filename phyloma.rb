@@ -1,8 +1,8 @@
 class Phyloma < Formula
   desc "Phyloma: Phylogenetic Marker-gene Analysis"
   homepage "https://github.com/nextgenusfs/phyloma"
-  url "https://github.com/nextgenusfs/phyloma/archive/0.0.8.tar.gz"
-  sha256 "5c0720874a99b26f0ba7cfb2490c45431eb7306e7dc13eebf70f6f611c03aaf4"
+  url "https://github.com/nextgenusfs/phyloma/archive/0.0.9.tar.gz"
+  sha256 "e3fa6cd6d0c5ef54dd94e05de291f0f624b25eeba01a79af204bd85d34d90e86"
 
   depends_on "bedtools" => :recommended
   depends_on "freebayes" => :recommended
