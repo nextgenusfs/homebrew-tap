@@ -1,8 +1,8 @@
 class Funannotate < Formula
   desc "Scripts to functionally annotate fungal genomes"
   homepage "https://github.com/nextgenusfs/funannotate"
-  url "https://github.com/nextgenusfs/funannotate/archive/0.3.10.tar.gz"
-  sha256 "53f764e556ba8e0f6971fe4592efd09c0b2ad71bea6803d2118ad2cc1fda03bf"
+  url "https://github.com/nextgenusfs/funannotate/archive/0.3.11.tar.gz"
+  sha256 "8dc5ead3779fca7c2208e7621324de2552d4b089949eb540e4ddc181436a47d9"
   # tag "bioinformatics"
 
   depends_on "blast" => :recommended if OS.mac?
@@ -74,11 +74,11 @@ class Funannotate < Formula
         http://exon.gatech.edu/GeneMark/license_download.cgi
 
       Install python modules via PIP:
-        pip install -U biopython natsort psutil goatools numpy pandas matplotlib seaborn scikit-learn
+        pip install -U biopython natsort psutil goatools fisher numpy pandas matplotlib seaborn scikit-learn
 
       Be sure to install RepeatMasker Libraries if you have not done so already.
-        wget --user name --password pass http://www.girinst.org/server/RepBase/protected/repeatmaskerlibraries/repeatmaskerlibraries-20150807.tar.gz
-        tar zxvf repeatmaskerlibraries-20150807.tar.gz -C #{HOMEBREW_PREFIX}/opt/repeatmasker/libexec
+        wget --user name --password pass http://www.girinst.org/server/RepBase/protected/repeatmaskerlibraries/repeatmaskerlibraries-20160829.tar.gz
+        tar zxvf repeatmaskerlibraries-20160829.tar.gz -C #{HOMEBREW_PREFIX}/opt/repeatmasker/libexec
 
         cd #{HOMEBREW_PREFIX}/opt/repeatmasker/libexec
         ./configure <config.txt
