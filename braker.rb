@@ -6,6 +6,9 @@ class Braker < Formula
   sha256 "9e959984f739208d2a0aab4cc978e7b11db11a86a25fcc5b8f71c9a31e9239f2"
 
   def install
+    inreplace "braker.pl", "/usr/bin/perl", "/usr/bin/env perl"
+    inreplace "filterGenemark.pl", "/usr/bin/perl", "/usr/bin/env perl"
+    inreplace "filterIntronsFindStrand.pl", "/usr/bin/perl", "/usr/bin/env perl"
     libexec.install Dir["*"]
     bin.install_symlink libexec/"braker.pl"
     bin.install_symlink libexec/"helpMod.pm"
