@@ -1,8 +1,8 @@
 class Funannotate < Formula
   desc "Scripts to functionally annotate fungal genomes"
   homepage "https://github.com/nextgenusfs/funannotate"
-  url "https://github.com/nextgenusfs/funannotate/archive/0.4.0.tar.gz"
-  sha256 "383b4115175bf0af490fe6cfa12cc9ae3d1b9045a3ee41e8a32a69fc514a97e2"
+  url "https://github.com/nextgenusfs/funannotate/archive/0.5.0.tar.gz"
+  sha256 "858ebe9599b0ea6692933f08276b7ae512345b8ac49ed8fe3a1e6ddc4c013912"
   # tag "bioinformatics"
 
   depends_on "blast" => :recommended if OS.mac?
@@ -29,6 +29,8 @@ class Funannotate < Formula
   depends_on "evidencemodeler" => :recommended
   depends_on "gag" => :recommended
   depends_on "proteinortho" => :recommended
+  depends_on "paml" => :recommended
+  depends_on "phyml" => :recommended
   # No formula: depends_on 'genemark-es' => :recommended
 
   depends_on "Bio::Perl" => :perl
@@ -74,7 +76,7 @@ class Funannotate < Formula
         http://exon.gatech.edu/GeneMark/license_download.cgi
 
       Install python modules via PIP:
-        pip install -U biopython natsort psutil goatools fisher numpy pandas matplotlib seaborn scikit-learn
+        pip install -U biopython natsort psutil goatools fisher numpy pandas matplotlib seaborn scikit-learn ete3 progressbar2
 
       Be sure to install RepeatMasker Libraries if you have not done so already.
         wget --user name --password pass http://www.girinst.org/server/RepBase/protected/repeatmaskerlibraries/repeatmaskerlibraries-20160829.tar.gz
