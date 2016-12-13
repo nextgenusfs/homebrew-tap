@@ -30,7 +30,7 @@ class Funannotate < Formula
   depends_on "gag" => :recommended
   depends_on "proteinortho" => :recommended
   depends_on "paml" => :recommended
-  depends_on "phyml" => :recommended
+  #depends_on "phyml" => :recommended
   # No formula: depends_on 'genemark-es' => :recommended
 
   depends_on "Bio::Perl" => :perl
