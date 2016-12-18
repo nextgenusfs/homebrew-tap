@@ -1,8 +1,8 @@
 class Ufits < Formula
   desc "USEARCH Fungal ITS Clustering scripts"
   homepage "https://github.com/nextgenusfs/ufits"
-  url "https://github.com/nextgenusfs/ufits/archive/0.7.1.tar.gz"
-  sha256 "4de2509b6f342000bbc2efb2612d6df5d6cd8d2c197e389537cf8840f33b6ee8"
+  url "https://github.com/nextgenusfs/ufits/archive/0.7.2.tar.gz"
+  sha256 "e9126a9f8e829432bc7b8e0ee99cb971e6a040fe79c392691a97222217693390"
 
   depends_on "bedtools" => :recommended
   depends_on "vsearch" => :recommended
@@ -20,7 +20,7 @@ class Ufits < Formula
       Make executable:
          sudo chmod +x /path/usearch/binary
 
-      Add to $PATH (UFITS uses usearch8 as default name):
+      Add to $PATH (UFITS uses usearch9 as default name):
          sudo ln -s /path/usearch/binary #{HOMEBREW_PREFIX}/opt/usearch8
 
       Python Dependencies:
