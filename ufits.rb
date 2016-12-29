@@ -1,8 +1,8 @@
 class Ufits < Formula
   desc "USEARCH Fungal ITS Clustering scripts"
   homepage "https://github.com/nextgenusfs/ufits"
-  url "https://github.com/nextgenusfs/ufits/archive/0.7.2.tar.gz"
-  sha256 "e9126a9f8e829432bc7b8e0ee99cb971e6a040fe79c392691a97222217693390"
+  url "https://github.com/nextgenusfs/ufits/archive/0.7.3.tar.gz"
+  sha256 "d196e96ad66d1bfda5edc26d8369a97dbc3476cf0f866d61be939843219ae5ca"
 
   depends_on "bedtools" => :recommended
   depends_on "vsearch" => :recommended
@@ -15,7 +15,7 @@ class Ufits < Formula
 
   def caveats; <<-EOS.undent
     Additional Dependencies:
-        UFITS requires USEARCH8, get here: http://www.drive5.com/usearch/download.html
+        UFITS requires USEARCH9, get here: http://www.drive5.com/usearch/download.html
 
       Make executable:
          sudo chmod +x /path/usearch/binary
