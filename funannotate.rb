@@ -1,8 +1,8 @@
 class Funannotate < Formula
   desc "Scripts to functionally annotate fungal genomes"
   homepage "https://github.com/nextgenusfs/funannotate"
-  url "https://github.com/nextgenusfs/funannotate/archive/0.5.5.tar.gz"
-  sha256 "1a84e09216eb093567c84814043b222be4d3dc600ce115beee9b89ff9baa8639"
+  url "https://github.com/nextgenusfs/funannotate/archive/0.5.7.tar.gz"
+  sha256 "3278d8f2a9e292c9b7cc1a2233af89d1223d46cd354201127719db9964f7c27f"
   # tag "bioinformatics"
 
   depends_on "blast" => :recommended if OS.mac?
