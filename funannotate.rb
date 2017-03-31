@@ -1,8 +1,8 @@
 class Funannotate < Formula
   desc "Scripts to functionally annotate fungal genomes"
   homepage "https://github.com/nextgenusfs/funannotate"
-  url "https://github.com/nextgenusfs/funannotate/archive/0.5.7.tar.gz"
-  sha256 "3278d8f2a9e292c9b7cc1a2233af89d1223d46cd354201127719db9964f7c27f"
+  url "https://github.com/nextgenusfs/funannotate/archive/0.6.0.tar.gz"
+  sha256 "717eb53331cbe4660c4ff4a2c19cc890622a8b295a6fab2e956529cdc18ba3d7"
   # tag "bioinformatics"
 
   depends_on "blast" => :recommended if OS.mac?
@@ -31,6 +31,7 @@ class Funannotate < Formula
   depends_on "proteinortho" => :recommended
   depends_on "paml" => :recommended
   depends_on "phyml" => :optional
+  depends_on "diamond" => :recommended
   # No formula: depends_on 'genemark-es' => :recommended
 
   depends_on "Bio::Perl" => :perl
@@ -79,8 +80,8 @@ class Funannotate < Formula
         pip install -U biopython natsort psutil goatools fisher numpy pandas matplotlib seaborn scikit-learn ete3
 
       Be sure to install RepeatMasker Libraries if you have not done so already.
-        wget --user name --password pass http://www.girinst.org/server/RepBase/protected/repeatmaskerlibraries/repeatmaskerlibraries-20160829.tar.gz
-        tar zxvf repeatmaskerlibraries-20160829.tar.gz -C #{HOMEBREW_PREFIX}/opt/repeatmasker/libexec
+        wget --user name --password pass http://www.girinst.org/server/RepBase/protected/repeatmaskerlibraries/RepBaseRepeatMaskerEdition-20170127.tar.gz
+        tar zxvf RepBaseRepeatMaskerEdition-20170127.tar.gz -C #{HOMEBREW_PREFIX}/opt/repeatmasker/libexec
 
         cd #{HOMEBREW_PREFIX}/opt/repeatmasker/libexec
         ./configure <config.txt
