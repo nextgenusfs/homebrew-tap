@@ -1,8 +1,8 @@
 class Gag < Formula
   desc "Converts GFF into NCBI tbl format"
   homepage "https://genomeannotation.github.io/GAG/"
-  url "https://github.com/genomeannotation/GAG/archive/v2.0.tar.gz"
-  sha256 "2767be8929bd1870c045a60f792e87491221c5fc616f96475c8eec8996aa478a"
+  url "https://github.com/genomeannotation/GAG/archive/v2.0.1.tar.gz"
+  sha256 "45a2c998f080a122da23eb6c8333dc18e84a3733ff52ce6ef01580b2c916e436"
 
   def install
     libexec.install Dir["*"]
