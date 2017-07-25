@@ -8,8 +8,8 @@ class Amptk < Formula
   depends_on "R" => :optional
 
   def install
+    system "make", "all"
     libexec.install Dir["*"]
-    system "make"
     bin.install_symlink libexec/"amptk"
   end
 
