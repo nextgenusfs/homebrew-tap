@@ -1,14 +1,15 @@
 class Amptk < Formula
   desc "AMPlicon ToolKit for NGS data"
   homepage "https://github.com/nextgenusfs/amptk"
-  url "https://github.com/nextgenusfs/amptk/archive/0.9.3.tar.gz"
-  sha256 "ea6c11b6ce55f3acb3ec382695af5e6e8c1a6da5b9ae1d929d96b7ae17e1cf06"
+  url "https://github.com/nextgenusfs/amptk/archive/0.10.0.tar.gz"
+  sha256 "ef02a6e5e7ef310ea4773ffdb25570fdbde6da640fd9be9aa828c7093b46ca0b"
 
   depends_on "vsearch" => :recommended
   depends_on "R" => :optional
 
   def install
     libexec.install Dir["*"]
+    system "make"
     bin.install_symlink libexec/"amptk"
   end
 
