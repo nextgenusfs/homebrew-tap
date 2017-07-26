@@ -1,8 +1,8 @@
 class Amptk < Formula
   desc "AMPlicon ToolKit for NGS data"
   homepage "https://github.com/nextgenusfs/amptk"
-  url "https://github.com/nextgenusfs/amptk/archive/0.10.0.tar.gz"
-  sha256 "3fcae7ceea110816b497feb279d48ede1888a681fad56ef34ce7987e95eb2fa5"
+  url "https://github.com/nextgenusfs/amptk/archive/0.10.1.tar.gz"
+  sha256 "75ea5205ef68ffe975f0148757d10d00aab6e16d14fc0b69c698bd72d39f2665"
 
   depends_on "vsearch" => :recommended
   depends_on "R" => :optional
@@ -23,9 +23,7 @@ class Amptk < Formula
          sudo ln -s /path/usearch/binary #{HOMEBREW_PREFIX}/opt/usearch9
 
       Python Dependencies:
-        pip install -U edlib biopython natsort numpy pandas matplotlib psutil h5py biom-format
-      or
-        conda install edlib biopython natsort numpy pandas matplotlib psutil h5py biom-format
+        pip install -U edlib biopython natsort numpy pandas matplotlib seaborn psutil h5py biom-format
     EOS
   end
 
