@@ -1,8 +1,8 @@
 class Amptk < Formula
   desc "AMPlicon ToolKit for NGS data"
   homepage "https://github.com/nextgenusfs/amptk"
-  url "https://github.com/nextgenusfs/amptk/archive/1.0.0.tar.gz"
-  sha256 "3e3cb8fbdca223e7d70f1e099da0043d6bcf49d616793e3c64dda8135dc8c225"
+  url "https://github.com/nextgenusfs/amptk/archive/v1.0.1.tar.gz"
+  sha256 "44cb6a519bf7ae2763db2a616661388b93fde8c8227902b3cc597a9799118a66"
 
   depends_on "vsearch" => :recommended
   depends_on "R" => :optional
