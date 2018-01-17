@@ -1,8 +1,8 @@
 class Funannotate < Formula
   desc "Scripts to functionally annotate fungal genomes"
   homepage "https://github.com/nextgenusfs/funannotate"
-  url "https://github.com/nextgenusfs/funannotate/archive/0.7.2.tar.gz"
-  sha256 "58298342a0ebd8edebb884a4553298c8c5cb4d3d55713795de8ab9cbc26df8b6"
+  url "https://github.com/nextgenusfs/funannotate/archive/1.0.2.tar.gz"
+  sha256 "980ae8cc2f1a4882b460b478497d4177aa1fde2d75f6b1326f944590b718748e"
   # tag "bioinformatics"
 
   depends_on "blast" => :recommended if OS.mac?
@@ -12,7 +12,7 @@ class Funannotate < Formula
   depends_on "kent-tools" => :recommended
   depends_on "mummer" => :recommended
   depends_on "bamtools" => :recommended
-  depends_on "augustus" => :optional
+  depends_on "augustus" => :recommended if OS.linux?
   depends_on "hmmer" => :recommended
   depends_on "exonerate" => :recommended
   depends_on "repeatscout" => :recommended
@@ -27,11 +27,13 @@ class Funannotate < Formula
   depends_on "cpanminus" => :optional
   depends_on "braker" => :recommended
   depends_on "evidencemodeler" => :recommended
-  depends_on "gag" => :recommended
   depends_on "proteinortho" => :recommended
   depends_on "paml" => :recommended
   depends_on "phyml" => :optional
   depends_on "diamond" => :recommended
+  depends_on "hisat2" => :recommended
+  depends_on "trinity" => :recommended
+  depends_on "kallisto" => :recommended
   # No formula: depends_on 'genemark-es' => :recommended
 
   depends_on "Bio::Perl" => :perl
@@ -71,12 +73,12 @@ class Funannotate < Formula
   def caveats; <<-EOS.undent
     Additional components of Funannotate:
       Troubleshooting, see detailed instructions:
-        https://github.com/nextgenusfs/funannotate
+        http://funannotate.readthedocs.io/en/latest/homebrew.html
 
       Download/install GeneMark-ES/ET: (gmes_petap.pl must be in PATH)
         http://exon.gatech.edu/GeneMark/license_download.cgi
 
-      Install python modules via PIP:
+      Install python modules via PIP or conda:
         pip install -U biopython natsort psutil goatools fisher numpy pandas matplotlib seaborn scikit-learn ete3
 
       Be sure to install RepeatMasker Libraries if you have not done so already.
@@ -88,12 +90,16 @@ class Funannotate < Formula
 
       Soft-link a repeatmasker utility script into the PATH:
         ln -s #{HOMEBREW_PREFIX}/opt/repeatmasker/libexec/util/rmOutToGFF3.pl #{HOMEBREW_PREFIX}/bin/rmOutToGFF3.pl
+        
+     Setup funannotate databases:
+        funannotate setup -d /path/to/DB
 
       Export required ENV variables (your paths might differ slightly):
         export EVM_HOME=#{HOMEBREW_PREFIX}/opt/evidencemodeler
         export AUGUSTUS_CONFIG_PATH=#{HOMEBREW_PREFIX}/opt/augustus/libexec/config
         export BAMTOOLS_PATH=#{HOMEBREW_PREFIX}/opt/bamtools/bin
         export GENEMARK_PATH=/path/to/gmes_petap.pl
+        export FUNANNOTATE_DB=/path/to/DB
 
     EOS
   end
