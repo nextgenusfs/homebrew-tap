@@ -6,7 +6,7 @@ class Funannotate < Formula
   # tag "bioinformatics"
 
   depends_on "blast" => :recommended if OS.mac?
-  depends_on "blast" => [:build, '--without-check'] if OS.linux?
+  depends_on "blast" => [:build, "--without-check"] if OS.linux?
   depends_on "gmap-gsnap" => :recommended
   depends_on "blat" => :recommended
   depends_on "kent-tools" => :recommended
@@ -39,7 +39,7 @@ class Funannotate < Formula
     libexec.install Dir["*"]
     bin.install_symlink libexec/"funannotate"
   end
-  
+
   def caveats; <<-EOS.undent
     Additional components of Funannotate:
       Troubleshooting, see detailed instructions:
@@ -47,12 +47,9 @@ class Funannotate < Formula
 
       Download/install GeneMark-ES/ET: (gmes_petap.pl must be in PATH)
         http://exon.gatech.edu/GeneMark/license_download.cgi
-    
-      Install Perl Modules via cpan or cpanminus:
-        cpanm Getopt::Long Pod::Usage File::Basename threads threads::shared \
-            Thread::Queue Carp Data::Dumper YAML Hash::Merge Logger::Simple Parallel::ForkManager \
-            DBI Text::Soundex Scalar::Util::Numeric Clone JSON LWP::UserAgent DBD::mysql URI::Escape
 
+      Install Perl Modules via cpan or cpanminus:
+        http://funannotate.readthedocs.io/en/latest/homebrew.html
       Install python modules via PIP or conda:
         pip install -U biopython natsort psutil goatools fisher numpy pandas matplotlib seaborn scikit-learn ete3
 
@@ -65,7 +62,7 @@ class Funannotate < Formula
 
       Soft-link a repeatmasker utility script into the PATH:
         ln -s #{HOMEBREW_PREFIX}/opt/repeatmasker/libexec/util/rmOutToGFF3.pl #{HOMEBREW_PREFIX}/bin/rmOutToGFF3.pl
-        
+
      Setup funannotate databases:
         funannotate setup -d /path/to/DB
 
@@ -80,6 +77,6 @@ class Funannotate < Formula
   end
 
   test do
-    system "#{bin}/funannotate version"
+    system "#{bin}/funannotate", "version"
   end
 end
