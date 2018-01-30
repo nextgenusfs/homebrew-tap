@@ -35,35 +35,6 @@ class Funannotate < Formula
   depends_on "kallisto" => :recommended
   # No formula: depends_on 'genemark-es' => :recommended
 
-  depends_on "Bio::Perl" => :perl
-  depends_on "Getopt::Long" => :perl
-  depends_on "Pod::Usage" => :perl
-  depends_on "File::Basename" => :perl
-  depends_on "threads" => :perl
-  depends_on "threads::shared" => :perl
-  depends_on "Thread::Queue" => :perl
-  depends_on "Carp" => :perl
-  depends_on "Data::Dumper" => :perl
-  depends_on "YAML" => :perl
-  depends_on "Hash::Merge" => :perl
-  depends_on "Logger::Simple" => :perl
-  depends_on "Parallel::ForkManager" => :perl
-  depends_on "Scalar::Util::Numeric" => :perl
-  depends_on "DBI" => :perl
-  depends_on "Text::Soundex" => :perl
-
-  depends_on :python if MacOS.version <= :snow_leopard
-
-  # No formula: depends_on "biopython" => :python
-  # No formula: depends_on "natsort" => :python
-  # No formula: depends_on "psutil" => :python
-  # No formula: depends_on "goatools" => :python
-  # No formula: depends_on "numpy" => :python
-  # No formula: depends_on "pandas" => :python
-  # No formula: depends_on "matplotlib" => :python
-  # No formula: depends_on "seaborn" => :python
-  # No formula: depends_on "scikit-learn" => :python
-
   def install
     libexec.install Dir["*"]
     bin.install_symlink libexec/"funannotate"
@@ -76,6 +47,11 @@ class Funannotate < Formula
 
       Download/install GeneMark-ES/ET: (gmes_petap.pl must be in PATH)
         http://exon.gatech.edu/GeneMark/license_download.cgi
+    
+      Install Perl Modules via cpan or cpanminus:
+        cpanm Getopt::Long Pod::Usage File::Basename threads threads::shared \
+            Thread::Queue Carp Data::Dumper YAML Hash::Merge Logger::Simple Parallel::ForkManager \
+            DBI Text::Soundex Scalar::Util::Numeric Clone JSON LWP::UserAgent DBD::mysql URI::Escape
 
       Install python modules via PIP or conda:
         pip install -U biopython natsort psutil goatools fisher numpy pandas matplotlib seaborn scikit-learn ete3
