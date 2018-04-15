@@ -9,10 +9,10 @@ class Amptk < Formula
 
   def install
     libexec.install Dir["*"]
-    bin.install_symlink libexec/bin/"amptk"
+    bin.install_symlink libexec/"bin"/"amptk"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     Additional Dependencies:
         AMPtk requires USEARCH9, get here: http://www.drive5.com/usearch/download.html
 
