@@ -1,13 +1,14 @@
 class Funannotate < Formula
   desc "Scripts to functionally annotate fungal genomes"
   homepage "https://github.com/nextgenusfs/funannotate"
-  url "https://github.com/nextgenusfs/funannotate/archive/v1.2.0.tar.gz"
-  sha256 "6917fa2288e3f124e0f1053b64fbe88cea9518357856562187da3030fd3b4814"
+  url "https://github.com/nextgenusfs/funannotate/archive/1.3.0.tar.gz"
+  sha256 "69ddfc756cdb841a94a567446e9c46946ea3be3c0e7074e2529be1042ae11cbc"
   # tag "bioinformatics"
 
   depends_on "blast" => :recommended if OS.mac?
   depends_on "blast" => [:build, "--without-check"] if OS.linux?
   depends_on "gmap-gsnap" => :recommended
+  depends_on "minimap2" => :recommended
   depends_on "blat" => :recommended
   depends_on "kent-tools" => :recommended
   depends_on "mummer" => :recommended
@@ -40,7 +41,7 @@ class Funannotate < Formula
     bin.install_symlink libexec/"funannotate"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     Additional components of Funannotate:
       Troubleshooting, see detailed instructions:
         http://funannotate.readthedocs.io/en/latest/homebrew.html
