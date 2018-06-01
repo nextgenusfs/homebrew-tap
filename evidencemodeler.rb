@@ -9,7 +9,7 @@ class Evidencemodeler < Formula
     prefix.install Dir["*"]
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     Set ENV Variable for EVidence Modeler by adding to your ~/.bash_profile
 
       export EVM_HOME=#{prefix}
