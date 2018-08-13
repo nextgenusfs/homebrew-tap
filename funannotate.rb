@@ -1,17 +1,17 @@
 class Funannotate < Formula
   desc "Scripts to functionally annotate fungal genomes"
   homepage "https://github.com/nextgenusfs/funannotate"
-  url "https://github.com/nextgenusfs/funannotate/archive/1.4.2.tar.gz"
-  sha256 "f205ac6a6ad4513d28f9efbc908382d0bc01a033424dc59613bee62b2ee8b6a7"
+  url "https://github.com/nextgenusfs/funannotate/archive/1.5.0.tar.gz"
+  sha256 "f035cca74cbd053dd871c35e51e546ee026ef004322bba3d8255e1044fb7018a"
   # tag "bioinformatics"
 
   depends_on "blast" => :recommended if OS.mac?
   depends_on "blast" => [:build, "--without-check"] if OS.linux?
-  depends_on "gmap-gsnap" => :recommended
+  depends_on "gmap-gsnap" => :optional
   depends_on "minimap2" => :recommended
   depends_on "blat" => :recommended
-  depends_on "kent-tools" => :recommended
-  depends_on "mummer" => :recommended
+  depends_on "kent-tools" => :optional
+  depends_on "mummer" => :optional
   depends_on "bamtools" => :recommended
   depends_on "augustus" => :recommended if OS.linux?
   depends_on "hmmer" => :recommended
@@ -34,6 +34,7 @@ class Funannotate < Formula
   depends_on "hisat2" => :recommended
   depends_on "trinity" => :recommended
   depends_on "kallisto" => :recommended
+  depends_on "stringtie" => :recommended
   # No formula: depends_on 'genemark-es' => :recommended
 
   def install
